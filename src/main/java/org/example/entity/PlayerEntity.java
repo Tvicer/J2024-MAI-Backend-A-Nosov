@@ -7,9 +7,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "person")
+@Table(name = "player")
 public class PlayerEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private String id;
 
     @Column

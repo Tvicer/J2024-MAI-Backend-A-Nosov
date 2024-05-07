@@ -1,5 +1,6 @@
 package org.example.service.impl;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.dto.WeaponDTO;
 import org.example.entity.WeaponEntity;
@@ -8,7 +9,9 @@ import org.example.service.WeaponService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.beans.Transient;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -43,5 +46,20 @@ public class WeaponServiceImpl implements WeaponService {
                 .stream()
                 .map(weaponEntity -> mapper.map(weaponEntity, WeaponDTO.class))
                 .toList();
+    }
+
+    @Override
+    @Transactional
+    public WeaponDTO save(Integer id, String name, Integer damage) {
+        WeaponEntity weaponEntity = new WeaponEntity();
+
+        weaponEntity.setId(id);
+        weaponEntity.setName(name);
+        weaponEntity.setDamage(damage);
+
+//        WeaponEntity newWeaponEntity = weaponRepository.save(weaponEntity);
+        WeaponEntity newWeaponEntity = weaponRepository.saveAndFlush(weaponEntity);
+
+        return mapper.map(newWeaponEntity, WeaponDTO.class);
     }
 }

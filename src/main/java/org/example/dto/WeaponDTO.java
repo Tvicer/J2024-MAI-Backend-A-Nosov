@@ -10,7 +10,7 @@ import lombok.Data;
         property = "id")
 public class WeaponDTO {
 
-    private String id;
+    private Integer id;
 
     private String name;
 

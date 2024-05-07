@@ -9,9 +9,10 @@ import java.util.Optional;
 
 @Repository
 public interface WeaponRepository extends JpaRepository<WeaponEntity, String> {
-    Optional<WeaponEntity> findById(String id);
+//    Optional<WeaponEntity> findById(String id);
 
     List<WeaponEntity> findByNameContainingIgnoreCaseOrderByName(String name);
 
-    List<WeaponEntity> findAll();
+//    List<WeaponEntity> findAll();
+
 }
