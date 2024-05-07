@@ -16,7 +16,7 @@ public class PersonController {
     private final PersonService personService;
 
     @GetMapping("/info/{id}")
-    public ResponseEntity<PersonDTO> getAlbum(@PathVariable String id) {
+    public ResponseEntity<PersonDTO> getPerson(@PathVariable String id) {
         return ResponseEntity.ok(personService.getById(id));
     }
 

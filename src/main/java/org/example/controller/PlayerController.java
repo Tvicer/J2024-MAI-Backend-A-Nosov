@@ -16,7 +16,7 @@ public class PlayerController {
     private final PlayerService playerService;
 
     @GetMapping("/info/{id}")
-    public ResponseEntity<PlayerDTO> getAlbum(@PathVariable String id) {
+    public ResponseEntity<PlayerDTO> getPlayer(@PathVariable String id) {
         return ResponseEntity.ok(playerService.getById(id));
     }
 

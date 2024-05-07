@@ -33,7 +33,7 @@ public class AvatarServiceImpl implements AvatarService {
     public List<AvatarDTO> getByName(String name) {
         var avatarEntities = avatarRepository.findByNameContainingIgnoreCaseOrderByName(name);
         return avatarEntities.stream()
-                .map(personEntity -> mapper.map(avatarEntities, AvatarDTO.class))
+                .map(avatarEntity -> mapper.map(avatarEntity, AvatarDTO.class))
                 .toList();
     }
 

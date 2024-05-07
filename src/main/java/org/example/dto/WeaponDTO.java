@@ -8,12 +8,11 @@ import lombok.Data;
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id")
-public class PersonDTO {
+public class WeaponDTO {
 
     private String id;
 
     private String name;
 
-    private Integer age;
-
+    private Integer damage;
 }

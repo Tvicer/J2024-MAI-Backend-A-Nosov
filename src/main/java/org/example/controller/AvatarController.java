@@ -16,7 +16,7 @@ public class AvatarController {
     private final AvatarService avatarService;
 
     @GetMapping("/info/{id}")
-    public ResponseEntity<AvatarDTO> getAlbum(@PathVariable String id) {
+    public ResponseEntity<AvatarDTO> getAvatar(@PathVariable String id) {
         return ResponseEntity.ok(avatarService.getById(id));
     }
 

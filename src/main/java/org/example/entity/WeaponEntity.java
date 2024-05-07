@@ -1,6 +1,9 @@
 package org.example.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +11,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "avatar")
-public class AvatarEntity {
+public class WeaponEntity {
     @Id
     private String id;
 
@@ -16,9 +19,6 @@ public class AvatarEntity {
     private String name;
 
     @Column
-    private Integer level;
-
-    @ManyToMany
-    private WeaponEntity player;
+    private Integer damage;
 }
 
